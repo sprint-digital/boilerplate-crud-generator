@@ -17,9 +17,9 @@ class BoilerplateCrudGeneratorServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('boilerplate-crud-generator')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_boilerplate-crud-generator_table')
+            // ->hasConfigFile()
+            // ->hasViews()
+            // ->hasMigration('create_boilerplate-crud-generator_table')
             ->hasCommand(BoilerplateCrudGeneratorCommand::class);
     }
 }
