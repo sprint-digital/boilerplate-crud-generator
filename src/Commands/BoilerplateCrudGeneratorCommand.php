@@ -25,7 +25,7 @@ class BoilerplateCrudGeneratorCommand extends Command
         // Add - Scope
         // Add - Relationship
         // Add - Repository
-        
+
         // Add - Migration
         // Add - Seeder
         // Modify - Database seeder? maybe
