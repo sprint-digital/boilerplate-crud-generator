@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 
 class BoilerplateCrudGeneratorCommand extends Command
 {
-    public $signature = 'make:crud {name}';
+    public $signature = 'make:crud {name} {--m|migrate} {--force}';
 
     public $description = 'Create a new CRUD based on name.';
 
@@ -19,6 +19,27 @@ class BoilerplateCrudGeneratorCommand extends Command
         info($name);
 
         $this->comment($name);
+
+        // Add - Model
+        // Add - Attribute
+        // Add - Scope
+        // Add - Relationship
+        // Add - Repository
+        
+        // Add - Migration
+        // Add - Seeder
+        // Modify - Database seeder? maybe
+
+        // GraphQL
+        // Add - model.graphql
+        // Add - Validators
+        // Add - Query?
+        // Add - Mutations?
+
+        // Test
+        // Add Test
+
+
         $this->comment('All done');
 
         return self::SUCCESS;
