@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace sprintdigital\BoilerplateCrudGenerator\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class BoilerplateCrudGeneratorCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'boilerplate-crud-generator';
 
     public $description = 'My command';
 

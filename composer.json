@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "sprint-digital/boilerplate-crud-generator",
+    "description": "This package is intended to be used with `sprint-digital/boilerplate-api-ap`",
     "keywords": [
-        ":vendor_name",
+        "sprint-digital",
         "laravel",
-        ":package_slug"
+        "boilerplate-crud-generator"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/sprint-digital/boilerplate-crud-generator",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Hoang Ho",
+            "email": "hoang.nhi.ho.1991@gmail.com",
             "role": "Developer"
         }
     ],
@@ -34,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "sprintdigital\\BoilerplateCrudGenerator\\": "src",
+            "sprintdigital\\BoilerplateCrudGenerator\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "sprintdigital\\BoilerplateCrudGenerator\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -54,10 +54,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "sprintdigital\\BoilerplateCrudGenerator\\BoilerplateCrudGeneratorServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "BoilerplateCrudGenerator": "sprintdigital\\BoilerplateCrudGenerator\\Facades\\BoilerplateCrudGenerator"
             }
         }
     },

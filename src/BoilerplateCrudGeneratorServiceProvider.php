@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace sprintdigital\BoilerplateCrudGenerator;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use sprintdigital\BoilerplateCrudGenerator\Commands\BoilerplateCrudGeneratorCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class BoilerplateCrudGeneratorServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('boilerplate-crud-generator')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_boilerplate-crud-generator_table')
+            ->hasCommand(BoilerplateCrudGeneratorCommand::class);
     }
 }
