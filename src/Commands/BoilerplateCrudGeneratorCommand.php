@@ -6,6 +6,9 @@ use Artisan;
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 
+/**
+ * Based on https://github.com/pqrs/l5b-crud
+ */
 class BoilerplateCrudGeneratorCommand extends Command
 {
     public $signature = 'make:crud {name} {--force}';
@@ -16,7 +19,6 @@ class BoilerplateCrudGeneratorCommand extends Command
 
     public function handle(): int
     {
-        // Transform l5b:crud command parameter to singular lowercase
         $name = Str::lower(Str::snake(Str::singular($this->argument('name'))));
 
         $this->modelName = ucfirst(Str::camel($name));
