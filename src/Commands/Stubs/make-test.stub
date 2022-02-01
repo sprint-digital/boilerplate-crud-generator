@@ -1,0 +1,153 @@
+<?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+use App\Models\User;
+use App\Models\DummyModel;
+use Nuwave\Lighthouse\Testing\MakesGraphQLRequests;
+
+class DummyModelTest extends TestCase
+{
+    use MakesGraphQLRequests;
+
+    /**
+     * DummyModel Index
+     *
+     * @return void
+     */
+    public function test_DummyLabel_index(): void
+    {
+        $user = User::first();
+        $DummyVariable = DummyModel::first();
+
+        $this->actingAs($user, 'api')->graphQL('
+        {
+            DummyLabel(first: 1, page: 1, orderBy:{column:"id", order:ASC}, query: "") {
+                data {
+                    id
+                }
+            }
+        }
+        ')->assertJson([
+            'data' => [
+                'DummyLabel' => [
+                    'data' => [
+                        [
+                            'id' => $DummyVariable->id,
+                        ]
+                    ],
+                ],
+            ],
+        ]);
+    }
+
+    /**
+     * DummyModel Show
+     *
+     * @return void
+     */
+    public function test_DummyLabel_show(): void
+    {
+        $user = User::first();
+        $DummyVariable = DummyModel::first();
+
+        $this->actingAs($user, 'api')->graphQL('
+        {
+            DummyVariable(id: 1) {
+                id
+            }
+        }
+        ')->assertJson([
+            'data' => [
+                'DummyVariable' => [
+                    'id' => $DummyVariable->id,
+                ],
+            ],
+        ]);
+    }
+    /**
+     * DummyModel Store
+     *
+     * @return void
+     */
+    public function test_DummyLabel_store(): void
+    {
+        $user = User::first();
+
+        $this->actingAs($user, 'api')->graphQL('
+        mutation {
+            createDummyModel(
+                input: {
+
+                }
+            ) {
+
+            }
+        }
+        ')->assertJson([
+            'data' => [
+                'createDummyModel' => [
+
+                ]
+            ],
+        ]);
+    }
+
+    /**
+     * DummyModel Update
+     *
+     * @return void
+     */
+    public function test_DummyLabel_update(): void
+    {
+        $user = User::first();
+        $DummyVariable = DummyModel::latest()->first();
+        $placeholderName = 'Test Name';
+        $this->actingAs($user, 'api')->graphQL('
+        mutation($id: ID!, $name: String!) {
+            updateDummyModel(
+                input: {
+                    id: $id
+                }
+            ) {
+                id
+            }
+        }
+        ', ['id' => $DummyVariable->id, 'name' => $placeholderName])->assertJson([
+            'data' => [
+                'updateDummyModel' => [
+                    'id' => $DummyVariable->id,
+                ]
+            ]
+        ]);
+    }
+
+    /**
+     * DummyModel Destroy
+     *
+     * @return void
+     */
+    public function test_DummyLabel_destroy(): void
+    {
+        $user = User::first();
+        $DummyVariable = DummyModel::latest()->first();
+
+        $this->actingAs($user, 'api')->graphQL('
+        mutation($id: ID!) {
+            deleteDummyModel(
+                id: $id
+            ) {
+                id
+            }
+        }
+        ', ['id' => $DummyVariable->id])->assertJson([
+            'data' => [
+                'deleteDummyModel' => [
+                    'id' => $DummyVariable->id
+                ]
+            ]
+        ]);
+    }
+
+}

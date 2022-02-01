@@ -1,0 +1,27 @@
+type DummyModel {
+    id: ID!
+    created_at: DateTime
+    updated_at: DateTime
+}
+
+extend type Query @guard {
+    DummyLabel(
+        orderBy: [OrderByClause!] @orderBy
+        query: String @scope(name: "query")
+    ): [DummyModel!]! @paginate
+    DummyVariable(id: ID! @eq): DummyModel @find
+}
+
+extend type Mutation @guard {
+    createDummyModel(input: CreateDummyModelInput! @spread): DummyModel! @create
+    updateDummyModel(input: UpdateDummyModelInput! @spread): DummyModel! @update
+    deleteDummyModel(id: ID! @rules(apply: ["required", "exists:DummyLabel,id"])): DummyModel! @delete
+}
+
+input CreateDummyModelInput @validator {
+
+}
+
+input UpdateDummyModelInput @validator {
+    id: ID!
+}

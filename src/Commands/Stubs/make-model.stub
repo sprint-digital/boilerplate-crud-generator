@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use App\Models\Traits\Scopes\DummyScope;
+use App\Models\Traits\Attributes\DummyAttribute;
+use App\Models\Traits\Relationships\DummyRelationship;
+
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
+
+use Dyrynda\Database\Support\CascadeSoftDeletes;
+
+class DummyModel extends Model implements HasMedia
+{
+    use HasFactory, SoftDeletes, DummyScope, DummyAttribute, DummyRelationship, LogsActivity, InteractsWithMedia, CascadeSoftDeletes;
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logOnly([
+                'id',
+            ])
+            ->logOnlyDirty()
+            ->dontSubmitEmptyLogs();
+    }
+
+    protected $cascadeDeletes = [];
+
+    protected $fillable = [
+        // '',
+    ];
+
+    public $searchables = [
+        // '',
+    ];
+
+    protected $casts = [
+        // 'is_' => 'boolean',
+    ];
+
+    protected $appends = [
+        // '',
+    ];
+}

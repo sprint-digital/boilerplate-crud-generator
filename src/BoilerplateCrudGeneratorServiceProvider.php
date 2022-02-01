@@ -4,6 +4,7 @@ namespace sprintdigital\BoilerplateCrudGenerator;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use sprintdigital\BoilerplateCrudGenerator\Commands\BoilerplateStubCommand;
 use sprintdigital\BoilerplateCrudGenerator\Commands\BoilerplateCrudGeneratorCommand;
 
 class BoilerplateCrudGeneratorServiceProvider extends PackageServiceProvider
@@ -20,6 +21,7 @@ class BoilerplateCrudGeneratorServiceProvider extends PackageServiceProvider
             // ->hasConfigFile()
             // ->hasViews()
             // ->hasMigration('create_boilerplate-crud-generator_table')
-            ->hasCommand(BoilerplateCrudGeneratorCommand::class);
+            ->hasCommand(BoilerplateCrudGeneratorCommand::class)
+            ->hasCommand(BoilerplateStubCommand::class);
     }
 }

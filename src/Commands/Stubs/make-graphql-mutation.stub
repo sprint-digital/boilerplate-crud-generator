@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Graphql\Mutations;
+
+use App\Models\DummyModel;
+use App\Repositories\DummyModelRepository;
+use Illuminate\Foundation\Http\FormRequest;
+
+class DummyClass
+{
+    private $DummyVariableRepository;
+
+    public function __construct(DummyModelRepository $DummyVariableRepository)
+    {
+        $this->DummyVariableRepository = $DummyVariableRepository;
+    }
+
+    public function store($root, array $args): DummyModel
+    {
+        $request = new FormRequest($args);
+        $DummyVariable = $this->DummyVariableRepository->create($request->all());
+
+        return $DummyVariable;
+    }
+
+    public function update($root, array $args): DummyModel
+    {
+        $DummyVariable = DummyModel::findOrFail($args['id']);
+
+        $request = new FormRequest($args);
+        $DummyVariable = $this->DummyVariableRepository->update($DummyVariable, $request->all());
+
+        return $DummyVariable;
+    }
+
+    public function destroy($root, array $args)
+    {
+        $DummyVariable = DummyModel::findOrFail($args['id']);
+
+        $this->DummyVariableRepository->deleteById($DummyVariable->id);
+
+        return ['status' => true];
+    }
+}

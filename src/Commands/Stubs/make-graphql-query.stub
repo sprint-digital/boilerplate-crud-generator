@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Graphql\Queries;
+
+use App\Models\DummyModel;
+
+class DummyClass
+{
+    public function index($root, array $args)
+    {
+        $query = DummyModel::get();
+
+        return $query;
+    }
+
+
+    public function show($root, array $args): DummyModel
+    {
+        $DummyVariable = DummyModel::findOrFail($args['id']);
+
+        return $DummyVariable;
+    }
+}

@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Models\Traits\Scopes;
+
+use Illuminate\Database\Eloquent\Builder;
+
+/**
+ * Trait DummyScope.
+ */
+trait DummyScope
+{
+    /**
+     * @return mixed
+     */
+    public function scopeQuery(Builder $query, $value)
+    {
+        return $query->whereLike($this->searchables, $value);
+    }
+    
+}

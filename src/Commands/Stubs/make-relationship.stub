@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Models\Traits\Relationships;
+
+/**
+ * Trait DummyRelationship.
+ */
+trait DummyRelationship
+{
+
+}
