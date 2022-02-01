@@ -16,6 +16,8 @@ composer require sprint-digital/boilerplate-crud-generator
 
 ## Usage
 
+This command will create migration, seeder, model, repository and graphQL files.
+
 ```bash
 php artisan make:crud post
 ```
