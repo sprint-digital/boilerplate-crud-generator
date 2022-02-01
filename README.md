@@ -11,7 +11,7 @@ This package is intended to be used with sprint-digital/boilerplate-api-app
 You can install the package via composer:
 
 ```bash
-composer require sprint-digital/boilerplate-crud-generator
+composer require [sprint-digital/boilerplate-crud-generator](https://github.com/sprint-digital/boilerplate-api-app)
 ```
 
 ## Usage
