@@ -1,6 +1,6 @@
 {
     "name": "sprint-digital/boilerplate-crud-generator",
-    "description": "This package is intended to be used with `sprint-digital/boilerplate-api-ap`",
+    "description": "This package is intended to be used with sprint-digital/boilerplate-api-app",
     "keywords": [
         "sprint-digital",
         "laravel",
