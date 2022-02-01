@@ -5,13 +5,13 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/sprint-digital/boilerplate-crud-generator/Check%20&%20fix%20styling?label=code%20style)](https://github.com/sprint-digital/boilerplate-crud-generator/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/sprint-digital/boilerplate-crud-generator.svg?style=flat-square)](https://packagist.org/packages/sprint-digital/boilerplate-crud-generator)
 
-This package is intended to be used with sprint-digital/boilerplate-api-app
+This package is intended to be used with [sprint-digital/boilerplate-api-app](https://github.com/sprint-digital/boilerplate-api-app)
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require [sprint-digital/boilerplate-crud-generator](https://github.com/sprint-digital/boilerplate-api-app)
+composer require sprint-digital/boilerplate-crud-generator
 ```
 
 ## Usage
