@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Graphql\Mutations;
+namespace App\GraphQL\Mutations;
 
 use App\Models\DummyModel;
 use App\Repositories\DummyModelRepository;
