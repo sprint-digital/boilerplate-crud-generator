@@ -2,10 +2,9 @@
 
 namespace sprintdigital\BoilerplateCrudGenerator\Commands;
 
-use Artisan;
-use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 use Illuminate\Console\GeneratorCommand;
+use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -148,6 +147,7 @@ class BoilerplateStubCommand extends GeneratorCommand
             ['graphql',                 InputArgument::OPTIONAL, 'Graphql name', null],
         ];
     }
+
     /*
     protected function getOptions()
     {
@@ -158,11 +158,10 @@ class BoilerplateStubCommand extends GeneratorCommand
 */
     protected function getOptions()
     {
-
-        return array(
-            array('force', null, InputOption::VALUE_OPTIONAL, 'Overwrite files if they exists'),
-            array('frontend', null, InputOption::VALUE_OPTIONAL, 'Create frontend files'),
-        );
+        return [
+            ['force', null, InputOption::VALUE_OPTIONAL, 'Overwrite files if they exists'],
+            ['frontend', null, InputOption::VALUE_OPTIONAL, 'Create frontend files'],
+        ];
     }
 
     /**

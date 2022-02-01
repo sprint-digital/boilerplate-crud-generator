@@ -4,8 +4,8 @@ namespace sprintdigital\BoilerplateCrudGenerator;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use sprintdigital\BoilerplateCrudGenerator\Commands\BoilerplateStubCommand;
 use sprintdigital\BoilerplateCrudGenerator\Commands\BoilerplateCrudGeneratorCommand;
+use sprintdigital\BoilerplateCrudGenerator\Commands\BoilerplateStubCommand;
 
 class BoilerplateCrudGeneratorServiceProvider extends PackageServiceProvider
 {
