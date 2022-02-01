@@ -2,6 +2,10 @@
 
 All notable changes to `boilerplate-crud-generator` will be documented in this file.
 
+## v0.1.2 - 2022-02-01
+
+namespace fix
+
 ## v0.1.1 - 2022-02-01
 
 changed description
