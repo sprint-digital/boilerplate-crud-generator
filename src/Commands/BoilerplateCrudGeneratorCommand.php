@@ -3,8 +3,8 @@
 namespace sprintdigital\BoilerplateCrudGenerator\Commands;
 
 use Artisan;
-use Illuminate\Support\Str;
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 
 class BoilerplateCrudGeneratorCommand extends Command
 {
@@ -68,14 +68,14 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function model($key, $name, $stub)
     {
         $stubParams = [
-            'name'              => $name,
-            'stub'              => __DIR__ . '/Stubs/' . $stub,
-            'namespace'         => '\Models',
-            'attribute'         => "{$this->modelName}Attribute",
-            'scope'             => "{$this->modelName}Scope",
-            'relationship'      => "{$this->modelName}Relationship",
-            'model'             => $this->modelName,
-            '--force'           => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\Models',
+            'attribute' => "{$this->modelName}Attribute",
+            'scope' => "{$this->modelName}Scope",
+            'relationship' => "{$this->modelName}Relationship",
+            'model' => $this->modelName,
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         Artisan::call('make:stub', $stubParams);
@@ -85,11 +85,11 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function attribute($key, $name, $stub)
     {
         $stubParams = [
-            'name'              => $name,
-            'stub'              => __DIR__ . '/Stubs/' . $stub,
-            'namespace'         => '\Models\Traits\Attributes',
-            'attribute'         => "{$this->modelName}Attribute",
-            '--force'           => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\Models\Traits\Attributes',
+            'attribute' => "{$this->modelName}Attribute",
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         Artisan::call('make:stub', $stubParams);
@@ -99,11 +99,11 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function relationship($key, $name, $stub)
     {
         $stubParams = [
-            'name'              => $name,
-            'stub'              => __DIR__ . '/Stubs/' . $stub,
-            'namespace'         => '\Models\Traits\Relationships',
-            'relationship'      => "{$this->modelName}Relationship",
-            '--force'           => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\Models\Traits\Relationships',
+            'relationship' => "{$this->modelName}Relationship",
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         Artisan::call('make:stub', $stubParams);
@@ -113,11 +113,11 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function scope($key, $name, $stub)
     {
         $stubParams = [
-            'name'              => $name,
-            'stub'              => __DIR__ . '/Stubs/' . $stub,
-            'namespace'         => '\Models\Traits\Scopes',
-            'scope'             => "{$this->modelName}Scope",
-            '--force'           => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\Models\Traits\Scopes',
+            'scope' => "{$this->modelName}Scope",
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         Artisan::call('make:stub', $stubParams);
@@ -127,14 +127,14 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function repository($key, $name, $stub)
     {
         $stubParams = [
-            'name'                  => $name,
-            'stub'                  => __DIR__ . '/Stubs/' . $stub,
-            'namespace'             => '\Repositories',
-            'model'                 => $this->modelName,
-            'repository'            => "{$this->modelName}Repository",
-            'variable'              => $key,
-            'label'                 => Str::plural($key),
-            '--force'               => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\Repositories',
+            'model' => $this->modelName,
+            'repository' => "{$this->modelName}Repository",
+            'variable' => $key,
+            'label' => Str::plural($key),
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         Artisan::call('make:stub', $stubParams);
@@ -144,16 +144,16 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function migration($key, $name, $stub)
     {
         $stubParams = [
-            'name'                  => $name,
-            'stub'                  => __DIR__ . '/Stubs/' . $stub,
-            'namespace'             => '\..\database\migrations',
-            'class'                 => "Create" . ucfirst(Str::plural(Str::camel($key))) . "Table",
-            'table'                 => Str::plural($key),
-            '--force'               => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\..\database\migrations',
+            'class' => "Create" . ucfirst(Str::plural(Str::camel($key))) . "Table",
+            'table' => Str::plural($key),
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         // If no migration with name "*create_names_table.php" exists then create it
-        if (!glob(database_path() . "/migrations/*create_" . Str::plural($key) . "_table.php")) {
+        if (! glob(database_path() . "/migrations/*create_" . Str::plural($key) . "_table.php")) {
             Artisan::call('make:stub', $stubParams);
             $this->comment('Migration ' . $stubParams['name'] . Artisan::output());
         } else {
@@ -164,12 +164,12 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function seeder($key, $name, $stub)
     {
         $stubParams = [
-            'name'                  => $name,
-            'stub'                  => __DIR__ . '/Stubs/' . $stub,
-            'namespace'             => '\..\database\seeders',
-            'seeder'                => "{$this->modelName}Seeder",
-            'model'                 => $this->modelName,
-            '--force'               => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\..\database\seeders',
+            'seeder' => "{$this->modelName}Seeder",
+            'model' => $this->modelName,
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         Artisan::call('make:stub', $stubParams);
@@ -179,14 +179,14 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function graphql($key, $name, $stub)
     {
         $stubParams = [
-            'name'                  => $name,
-            'stub'                  => __DIR__ . '/Stubs/' . $stub,
-            'namespace'             => '\..\graphql\models',
-            'label'                 => Str::plural($key),
-            'variable'              => Str::camel($key),
-            'graphql'               => true,
-            'model'                 => $this->modelName,
-            '--force'               => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\..\graphql\models',
+            'label' => Str::plural($key),
+            'variable' => Str::camel($key),
+            'graphql' => true,
+            'model' => $this->modelName,
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         Artisan::call('make:stub', $stubParams);
@@ -196,11 +196,11 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function graphqlValidator($key, $name, $stub)
     {
         $stubParams = [
-            'name'                  => $name,
-            'stub'                  => __DIR__ . '/Stubs/' . $stub,
-            'namespace'             => '\GraphQL\Validators',
-            'class'                 => $name,
-            '--force'               => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\GraphQL\Validators',
+            'class' => $name,
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         Artisan::call('make:stub', $stubParams);
@@ -210,13 +210,13 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function graphqlQuery($key, $name, $stub)
     {
         $stubParams = [
-            'name'                  => $name,
-            'stub'                  => __DIR__ . '/Stubs/' . $stub,
-            'namespace'             => '\GraphQL\Queries',
-            'class'                 => $name,
-            'variable'              => Str::camel($key),
-            'model'                 => $this->modelName,
-            '--force'               => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\GraphQL\Queries',
+            'class' => $name,
+            'variable' => Str::camel($key),
+            'model' => $this->modelName,
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         Artisan::call('make:stub', $stubParams);
@@ -226,13 +226,13 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function graphqlMutation($key, $name, $stub)
     {
         $stubParams = [
-            'name'                  => $name,
-            'stub'                  => __DIR__ . '/Stubs/' . $stub,
-            'namespace'             => '\GraphQL\Mutations',
-            'class'                 => $name,
-            'variable'              => Str::camel($key),
-            'model'                 => $this->modelName,
-            '--force'               => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\GraphQL\Mutations',
+            'class' => $name,
+            'variable' => Str::camel($key),
+            'model' => $this->modelName,
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         Artisan::call('make:stub', $stubParams);
@@ -242,14 +242,14 @@ class BoilerplateCrudGeneratorCommand extends Command
     protected function test($key, $name, $stub)
     {
         $stubParams = [
-            'name'                  => $name,
-            'stub'                  => __DIR__ . '/Stubs/' . $stub,
-            'namespace'             => '\..\tests\Feature',
-            'class'                 => $name,
-            'label'                 => Str::plural($key),
-            'variable'              => Str::camel($key),
-            'model'                 => $this->modelName,
-            '--force'               => $this->hasOption('force') ? $this->option('force') : false,
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\..\tests\Feature',
+            'class' => $name,
+            'label' => Str::plural($key),
+            'variable' => Str::camel($key),
+            'model' => $this->modelName,
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
         Artisan::call('make:stub', $stubParams);
