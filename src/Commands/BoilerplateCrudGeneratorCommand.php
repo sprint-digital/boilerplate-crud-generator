@@ -246,7 +246,7 @@ class BoilerplateCrudGeneratorCommand extends Command
         $stubParams = [
             'name' => $name,
             'stub' => __DIR__ . '/Stubs/' . $stub,
-            'namespace' => '\..\tests\Feature',
+            'namespace' => '\..\tests\Feature\GraphQL',
             'class' => $name,
             'label' => Str::plural($key),
             'variable' => Str::camel($key),
