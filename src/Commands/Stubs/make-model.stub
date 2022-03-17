@@ -34,11 +34,11 @@ class DummyModel extends Model implements HasMedia
     protected $cascadeDeletes = [];
 
     protected $fillable = [
-        // '',
+        'name',
     ];
 
     public $searchables = [
-        // '',
+        'name',
     ];
 
     protected $casts = [

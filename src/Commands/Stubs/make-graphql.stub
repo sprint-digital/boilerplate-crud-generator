@@ -1,5 +1,6 @@
 type DummyModel {
     id: ID!
+    name: String
     created_at: DateTime
     updated_at: DateTime
 }
@@ -19,9 +20,10 @@ extend type Mutation @guard {
 }
 
 input CreateDummyModelInput @validator {
-
+    name: String
 }
 
 input UpdateDummyModelInput @validator {
     id: ID!
+    name: String
 }

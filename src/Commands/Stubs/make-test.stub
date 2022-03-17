@@ -79,16 +79,16 @@ class DummyModelTest extends TestCase
         mutation {
             createDummyModel(
                 input: {
-
+                    name: "test name"
                 }
             ) {
-
+                name
             }
         }
         ')->assertJson([
             'data' => [
                 'createDummyModel' => [
-
+                    'name' => "test name"
                 ]
             ],
         ]);
@@ -109,15 +109,18 @@ class DummyModelTest extends TestCase
             updateDummyModel(
                 input: {
                     id: $id
+                    name: $name
                 }
             ) {
                 id
+                name
             }
         }
         ', ['id' => $DummyVariable->id, 'name' => $placeholderName])->assertJson([
             'data' => [
                 'updateDummyModel' => [
                     'id' => $DummyVariable->id,
+                    'name' => $placeholderName
                 ]
             ]
         ]);

@@ -16,7 +16,7 @@ class DummySeeder extends Seeder
     public function run()
     {
         DummyModel::create([
-            // '' => '',
+            // 'name' => '',
         ]);
 
     }
