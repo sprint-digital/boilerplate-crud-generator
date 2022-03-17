@@ -6,7 +6,7 @@ type DummyModel {
 }
 
 extend type Query @guard {
-    DummyLabel(
+    DummyVariables(
         orderBy: [OrderByClause!] @orderBy
         query: String @scope(name: "query")
     ): [DummyModel!]! @paginate

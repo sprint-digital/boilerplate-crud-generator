@@ -186,6 +186,7 @@ class BoilerplateCrudGeneratorCommand extends Command
             'namespace' => '\..\graphql\models',
             'label' => Str::plural($key),
             'variable' => Str::camel($key),
+            'variables' => Str::plural(Str::camel($key)),
             'graphql' => true,
             'model' => $this->modelName,
             '--force' => $this->hasOption('force') ? $this->option('force') : false,
@@ -250,6 +251,7 @@ class BoilerplateCrudGeneratorCommand extends Command
             'class' => $name,
             'label' => Str::plural($key),
             'variable' => Str::camel($key),
+            'variables' => Str::plural(Str::camel($key)),
             'model' => $this->modelName,
             '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
