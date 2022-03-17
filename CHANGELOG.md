@@ -2,6 +2,10 @@
 
 All notable changes to `boilerplate-crud-generator` will be documented in this file.
 
+## v0.1.5 - 2022-03-17
+
+added in `name` field. This is just a quality of life change.
+
 ## v0.1.4 - 2022-03-16
 
 fixed migration file. used `$this->id()`
