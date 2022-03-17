@@ -31,7 +31,7 @@ class DummyModelTest extends TestCase
         }
         ')->assertJson([
             'data' => [
-                'DummyLabel' => [
+                'DummyVariables' => [
                     'data' => [
                         [
                             'id' => $DummyVariable->id,
