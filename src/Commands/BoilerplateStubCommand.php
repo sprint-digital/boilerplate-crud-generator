@@ -85,6 +85,7 @@ class BoilerplateStubCommand extends GeneratorCommand
             $this->argument('route'),
             $this->argument('table'),
             $this->argument('variable'),
+            $this->argument('variables'),
             $this->argument('view'),
         ];
 
@@ -143,6 +144,7 @@ class BoilerplateStubCommand extends GeneratorCommand
             ['route',                   InputArgument::OPTIONAL, 'Route name', null],
             ['table',                   InputArgument::OPTIONAL, 'Table name', null],
             ['variable',                InputArgument::OPTIONAL, 'Variable name', null],
+            ['variables',               InputArgument::OPTIONAL, 'Variables name', null],
             ['view',                    InputArgument::OPTIONAL, 'View name', null],
             ['graphql',                 InputArgument::OPTIONAL, 'Graphql name', null],
         ];

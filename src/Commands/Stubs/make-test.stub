@@ -23,7 +23,7 @@ class DummyModelTest extends TestCase
 
         $this->actingAs($user, 'api')->graphQL('
         {
-            DummyLabel(first: 1, page: 1, orderBy:{column:"id", order:ASC}, query: "") {
+            DummyVariables(first: 1, page: 1, orderBy:{column:"id", order:ASC}, query: "") {
                 data {
                     id
                 }
