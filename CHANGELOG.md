@@ -2,6 +2,10 @@
 
 All notable changes to `boilerplate-crud-generator` will be documented in this file.
 
+## v0.1.7 - 2022-03-17
+
+Fixed query name in graphql and test files
+
 ## v0.1.6 - 2022-03-17
 
 Changed graphql test path.
