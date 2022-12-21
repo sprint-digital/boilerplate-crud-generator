@@ -2,6 +2,10 @@
 
 All notable changes to `boilerplate-crud-generator` will be documented in this file.
 
+## v0.1.10 - 2022-12-21
+
+Update test and github action scripts
+
 ## v0.1.9 - 2022-12-21
 
 Updating dependancy. nothing much
