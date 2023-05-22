@@ -1,6 +1,6 @@
 <?php
 
-namespace sprintdigital\BoilerplateCrudGenerator\Database\Factories;
+namespace Sprintdigital\BoilerplateCrudGenerator\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

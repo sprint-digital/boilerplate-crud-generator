@@ -1,6 +1,6 @@
 <?php
 
-namespace sprintdigital\BoilerplateCrudGenerator\Commands;
+namespace Sprintdigital\BoilerplateCrudGenerator\Commands;
 
 use Artisan;
 use Illuminate\Console\Command;

@@ -1,10 +1,10 @@
 <?php
 
-namespace sprintdigital\BoilerplateCrudGenerator\Tests;
+namespace Sprintdigital\BoilerplateCrudGenerator\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use sprintdigital\BoilerplateCrudGenerator\BoilerplateCrudGeneratorServiceProvider;
+use Sprintdigital\BoilerplateCrudGenerator\BoilerplateCrudGeneratorServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'sprintdigital\\BoilerplateCrudGenerator\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Sprintdigital\\BoilerplateCrudGenerator\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

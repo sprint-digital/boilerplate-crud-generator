@@ -1,6 +1,6 @@
 <?php
 
-namespace sprintdigital\BoilerplateCrudGenerator;
+namespace Sprintdigital\BoilerplateCrudGenerator;
 
 class BoilerplateCrudGenerator
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace sprintdigital\BoilerplateCrudGenerator\Facades;
+namespace Sprintdigital\BoilerplateCrudGenerator\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \sprintdigital\BoilerplateCrudGenerator\BoilerplateCrudGenerator
+ * @see \Sprintdigital\BoilerplateCrudGenerator\BoilerplateCrudGenerator
  */
 class BoilerplateCrudGenerator extends Facade
 {

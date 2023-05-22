@@ -1,5 +1,5 @@
 <?php
 
-use sprintdigital\BoilerplateCrudGenerator\Tests\TestCase;
+use Sprintdigital\BoilerplateCrudGenerator\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
