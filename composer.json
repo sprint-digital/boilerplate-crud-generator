@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Sprintdigital\\BoilerplateCrudGenerator\\": "src/",
+            "Sprintdigital\\BoilerplateCrudGenerator\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "Sprintdigital\\BoilerplateCrudGenerator\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "sprintdigital\\BoilerplateCrudGenerator\\BoilerplateCrudGeneratorServiceProvider"
+                "Sprintdigital\\BoilerplateCrudGenerator\\BoilerplateCrudGeneratorServiceProvider"
             ],
             "aliases": {
-                "BoilerplateCrudGenerator": "sprintdigital\\BoilerplateCrudGenerator\\Facades\\BoilerplateCrudGenerator"
+                "BoilerplateCrudGenerator": "Sprintdigital\\BoilerplateCrudGenerator\\Facades\\BoilerplateCrudGenerator"
             }
         }
     },
