@@ -2,6 +2,10 @@
 
 All notable changes to `boilerplate-crud-generator` will be documented in this file.
 
+## v0.1.15 - 2023-05-22
+
+Updating composer
+
 ## v0.1.14 - 2023-05-22
 
 Updating to laravel 10
