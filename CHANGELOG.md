@@ -2,6 +2,10 @@
 
 All notable changes to `boilerplate-crud-generator` will be documented in this file.
 
+## 10.0.1 - 2023-05-23
+
+fixed delete graphql
+
 ## v0.1.15 - 2023-05-22
 
 Updating composer
