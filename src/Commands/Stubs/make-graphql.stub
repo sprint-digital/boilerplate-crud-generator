@@ -16,7 +16,7 @@ extend type Query @guard {
 extend type Mutation @guard {
     createDummyModel(input: CreateDummyModelInput! @spread): DummyModel! @create
     updateDummyModel(input: UpdateDummyModelInput! @spread): DummyModel! @update
-    deleteDummyModel(id: ID! @rules(apply: ["required", "exists:DummyLabel,id"])): DummyModel! @delete
+    deleteDummyModel(id: ID! @whereKey @rules(apply: ["required", "exists:DummyLabel,id"])): DummyModel! @delete
 }
 
 input CreateDummyModelInput @validator {
