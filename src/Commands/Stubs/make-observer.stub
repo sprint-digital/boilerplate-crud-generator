@@ -12,7 +12,7 @@ class DummyObserver
      * @param  \App\Models\DummyModel  $DummyVariable
      * @return void
      */
-    public function created(Dummy $DummyVariable)
+    public function created(DummyModel $DummyVariable)
     {
         //
     }
@@ -23,7 +23,7 @@ class DummyObserver
      * @param  \App\Models\DummyModel  $DummyVariable
      * @return void
      */
-    public function updated(Dummy $DummyVariable)
+    public function updated(DummyModel $DummyVariable)
     {
         //
     }
@@ -34,7 +34,7 @@ class DummyObserver
      * @param  \App\Models\DummyModel  $DummyVariable
      * @return void
      */
-    public function deleted(Dummy $DummyVariable)
+    public function deleted(DummyModel $DummyVariable)
     {
         //
     }
@@ -45,7 +45,7 @@ class DummyObserver
      * @param  \App\Models\DummyModel  $DummyVariable
      * @return void
      */
-    public function restored(Dummy $DummyVariable)
+    public function restored(DummyModel $DummyVariable)
     {
         //
     }
@@ -56,7 +56,7 @@ class DummyObserver
      * @param  \App\Models\DummyModel  $DummyVariable
      * @return void
      */
-    public function forceDeleted(Dummy $DummyVariable)
+    public function forceDeleted(DummyModel $DummyVariable)
     {
         //
     }
