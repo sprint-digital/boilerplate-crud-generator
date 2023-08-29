@@ -2,6 +2,10 @@
 
 All notable changes to `boilerplate-crud-generator` will be documented in this file.
 
+## 10.0.4 - 2023-08-29
+
+camel case
+
 ## 10.0.3 - 2023-08-29
 
 fixing bugs
