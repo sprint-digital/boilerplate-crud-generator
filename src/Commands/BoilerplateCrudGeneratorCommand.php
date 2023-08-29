@@ -35,6 +35,9 @@ class BoilerplateCrudGeneratorCommand extends Command
         // Create Scope Trait "NameScope.php"
         $this->scope($name, "{$this->modelName}Scope", 'make-scope.stub');
 
+        // Create Observer "NameObserver.php"
+        $this->observer($name, "{$this->modelName}Observer", 'make-observer.stub');
+
         // Create Repository "NameRepository.php"
         $this->repository($name, "{$this->modelName}Repository", 'make-repository.stub');
 
@@ -124,6 +127,23 @@ class BoilerplateCrudGeneratorCommand extends Command
 
         Artisan::call('make:stub', $stubParams);
         $this->comment('Scope ' . $stubParams['name'] . Artisan::output());
+    }
+
+
+    protected function observer($key, $name, $stub)
+    {
+        $stubParams = [
+            'name' => $name,
+            'stub' => __DIR__ . '/Stubs/' . $stub,
+            'namespace' => '\Observers',
+            'observer' => "{$this->modelName}Observer",
+            'model' => $this->modelName,
+            'variable' => $key,
+            '--force' => $this->hasOption('force') ? $this->option('force') : false,
+        ];
+
+        Artisan::call('make:stub', $stubParams);
+        $this->comment('Observer ' . $stubParams['name'] . Artisan::output());
     }
 
     protected function repository($key, $name, $stub)

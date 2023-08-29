@@ -1,0 +1,63 @@
+<?php
+
+namespace App\Observers;
+
+use App\Models\DummyModel;
+
+class DummyObserver
+{
+    /**
+     * Handle the DummyModel "created" event.
+     *
+     * @param  \App\Models\DummyModel  $DummyVariable
+     * @return void
+     */
+    public function created(Dummy $DummyVariable)
+    {
+        //
+    }
+
+    /**
+     * Handle the DummyModel "updated" event.
+     *
+     * @param  \App\Models\DummyModel  $DummyVariable
+     * @return void
+     */
+    public function updated(Dummy $DummyVariable)
+    {
+        //
+    }
+
+    /**
+     * Handle the DummyModel "deleted" event.
+     *
+     * @param  \App\Models\DummyModel  $DummyVariable
+     * @return void
+     */
+    public function deleted(Dummy $DummyVariable)
+    {
+        //
+    }
+
+    /**
+     * Handle the DummyModel "restored" event.
+     *
+     * @param  \App\Models\DummyModel  $DummyVariable
+     * @return void
+     */
+    public function restored(Dummy $DummyVariable)
+    {
+        //
+    }
+
+    /**
+     * Handle the DummyModel "force deleted" event.
+     *
+     * @param  \App\Models\DummyModel  $DummyVariable
+     * @return void
+     */
+    public function forceDeleted(Dummy $DummyVariable)
+    {
+        //
+    }
+}
