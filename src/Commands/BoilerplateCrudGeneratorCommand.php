@@ -138,7 +138,7 @@ class BoilerplateCrudGeneratorCommand extends Command
             'namespace' => '\Observers',
             'observer' => "{$this->modelName}Observer",
             'model' => $this->modelName,
-            'variable' => $key,
+            'variable' => Str::camel($key),
             '--force' => $this->hasOption('force') ? $this->option('force') : false,
         ];
 
