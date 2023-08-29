@@ -2,6 +2,10 @@
 
 All notable changes to `boilerplate-crud-generator` will be documented in this file.
 
+## 10.0.2 - 2023-08-29
+
+added observer.php to crud generator
+
 ## 10.0.1 - 2023-05-23
 
 fixed delete graphql
