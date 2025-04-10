@@ -2,6 +2,10 @@
 
 All notable changes to `boilerplate-crud-generator` will be documented in this file.
 
+## 12.0.1 - 2025-04-10
+
+Just laravel 12 upgrade
+
 ## 10.0.4 - 2023-08-29
 
 camel case
