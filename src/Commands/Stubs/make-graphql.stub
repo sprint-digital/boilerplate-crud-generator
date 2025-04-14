@@ -17,6 +17,10 @@ extend type Mutation @guard {
     createDummyModel(input: CreateDummyModelInput! @spread): DummyModel! @create
     updateDummyModel(input: UpdateDummyModelInput! @spread): DummyModel! @update
     deleteDummyModel(id: ID! @whereKey @rules(apply: ["required", "exists:DummyLabel,id"])): DummyModel! @delete
+
+    # Bulk operations
+    createManyDummyModel(input: [CreateDummyModelInput!]!): [DummyModel!]! @createMany
+    updateManyDummyModel(input: [UpdateDummyModelInput!]!): [DummyModel!]! @updateMany
 }
 
 input CreateDummyModelInput @validator {

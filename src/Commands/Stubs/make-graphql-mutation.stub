@@ -23,6 +23,16 @@ class DummyClass
         return $DummyVariable;
     }
 
+    public function storeMany($root, array $args): array
+    {
+        $items = collect($args['input'])->map(function ($item) {
+            $request = new FormRequest($item);
+            return $this->DummyVariableRepository->create($request->all());
+        });
+
+        return $items->all();
+    }
+
     public function update($root, array $args): DummyModel
     {
         $DummyVariable = DummyModel::findOrFail($args['id']);
@@ -31,6 +41,17 @@ class DummyClass
         $DummyVariable = $this->DummyVariableRepository->update($DummyVariable, $request->all());
 
         return $DummyVariable;
+    }
+
+    public function updateMany($root, array $args): array
+    {
+        $items = collect($args['input'])->map(function ($item) {
+            $DummyVariable = DummyModel::findOrFail($item['id']);
+            $request = new FormRequest($item);
+            return $this->DummyVariableRepository->update($DummyVariable, $request->all());
+        });
+
+        return $items->all();
     }
 
     public function destroy($root, array $args)
