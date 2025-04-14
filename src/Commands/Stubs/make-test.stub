@@ -6,10 +6,12 @@ use Tests\TestCase;
 use App\Models\User;
 use App\Models\DummyModel;
 use Nuwave\Lighthouse\Testing\MakesGraphQLRequests;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class DummyModelTest extends TestCase
 {
     use MakesGraphQLRequests;
+    use RefreshDatabase;
 
     /**
      * DummyModel Index
